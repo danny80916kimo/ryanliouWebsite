@@ -30,7 +30,8 @@ twitter_username: dagingingin
 github_username:  danny80916kimo
 
 # Build settings
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "contrast"
 plugins:
   - jekyll-feed
