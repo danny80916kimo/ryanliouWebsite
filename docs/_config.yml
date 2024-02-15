@@ -31,8 +31,8 @@ github_username:  danny80916kimo
 
 # Build settings
 # theme: minimal-mistakes-jekyll
-# remote_theme: "mmistakes/minimal-mistakes"
-# minimal_mistakes_skin: "contrast"
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "contrast"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
