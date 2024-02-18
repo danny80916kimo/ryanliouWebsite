@@ -3,8 +3,8 @@ layout: archive
 ---
 
 {{ content }}
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<h1>This the Home</h1>
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "最新貼文" }}</h3>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
