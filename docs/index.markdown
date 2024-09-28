@@ -3,5 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+author_profile: false
+classes: 
+    - wide
 ---
-test 這裡要放？
+<img src="/ryanliouWebsite/assets/images/selfie.jpg">

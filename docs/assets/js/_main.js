@@ -3,6 +3,8 @@
    ========================================================================== */
 
 $(function() {
+  window.onscroll = function() {scrollFunction()};
+
   // FitVids init
   $("#main").fitVids();
 
@@ -134,3 +136,4 @@ $(function() {
     }
   });
 });
+

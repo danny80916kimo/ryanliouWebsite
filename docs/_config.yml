@@ -54,21 +54,18 @@ social:
 author:
   name     : "大軍軍"
   avatar   : "assets/images/logo.jpg"
-  bio      : "My awesome biography constrained to a sentence or two goes here."
+  bio      : "一位iOS工程師，平時興趣喜歡研究技術、設計、3D及Motion Graphic"
   location : "Taiwan"
   links:
-    - label: "Made Mistakes"
-      icon: "fas fa-fw fa-link"
-      url: "https://mademistakes.com"
     - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mmistakes"
+      icon: "fa-brands fa-square-x-twitter"
+      url: "https://twitter.com/DAGINGINGIN"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/mmistakes"
+      icon: "fa-brands fa-square-github"
+      url: "https://github.com/danny80916kimo"
     - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/mmistakes"
+      icon: "fa-brands fa-square-instagram"
+      url: "https://www.instagram.com/danny80916kimo/"
 
 defaults:
   # _posts
