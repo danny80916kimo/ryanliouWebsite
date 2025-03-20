@@ -7,4 +7,6 @@ author_profile: false
 classes: 
     - wide
 ---
-<img src="/ryanliouWebsite/assets/images/selfie.jpg">
+<!-- <img src="/ryanliouWebsite/assets/images/selfie.jpg">
+
+這是首頁 -->

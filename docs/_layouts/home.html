@@ -1,10 +1,9 @@
 ---
 layout: archive
+author_profile: true
 ---
 
 {{ content }}
-<!-- <h1>This the Home</h1>
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "最新貼文" }}</h3>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
@@ -15,8 +14,10 @@ layout: archive
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
+  <p>{{ post.tags }}</p>
     {% include archive-single.html type=entries_layout %}
   {% endfor %}
+
 </div>
 
-{% include paginator.html %} -->
+{% include paginator.html %}

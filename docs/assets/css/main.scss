@@ -7,3 +7,20 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.post_tag {
+  font-size: small;
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.archive__item-date {
+    font-size: small;
+    color: $primary-color;
+    margin: 3px;
+}
+
+.archive__item-tags{
+    margin: 3px;
+}

@@ -4,9 +4,9 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
-  - title: "iOS Projects"
-    url: /year-archive/
-  - title: "Art Works"
-    url: /collection-archive/
+  # - title: "iOS Projects"
+  #   url: /year-archive/
+  # - title: "Art Works"
+  #   url: /art-works/
   - title: "Blog"
-    url: /sitemap/
+    url: /

@@ -1,0 +1,14 @@
+---
+layout: archive
+output: true
+---
+{{ content }}
+
+藝術作品列表
+
+{% for art_work in site.art_works %}
+<h2>{{ art_work.name }}</h2>
+<p>發表日期：{{ art_work.publish_date }}</p>
+<p>{{ art_work.content | markdownify }}</p>
+<p>{{ staff_member.content | markdownify }}</p>
+{% endfor %}

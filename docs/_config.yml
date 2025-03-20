@@ -74,9 +74,7 @@ defaults:
       type: posts
     values:
       author_profile: true
-
-defaults:
-  # _pages
+      show_date: true
   - scope:
       path: ""
       type: pages
@@ -84,7 +82,12 @@ defaults:
       layout: single
       author_profile: true
 
-include: ["_pages"]
+collections:
+   art_works:
+    output: true
+
+
+include: ["_pages","_artworks"]
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
