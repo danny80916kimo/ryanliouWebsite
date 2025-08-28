@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: "iPlayground2025準備心得"
-date: 2025-08-29
+date: 2025-08-27
 categories: posts
 ---
 
