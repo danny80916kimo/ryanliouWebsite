@@ -1,23 +1,28 @@
 ---
-layout: archive
-author_profile: true
+layout: default
 ---
 
-{{ content }}
-
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-  <p>{{ post.tags }}</p>
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-
+<div class="hero fade-in">
+  <div class="container">
+    <h1>嗨，我是 <span>大軍軍</span></h1>
+    <p class="subtitle">iOS 開發者 • 設計師 • 3D 創作者<br>分享程式設計、平面設計、3D 設計</p>
+  </div>
 </div>
 
-{% include paginator.html %}
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3 stagger-fade-in">
+      {% for post in site.posts limit:9 %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size > 9 %}
+    <div class="section-center" style="margin-top: 3rem;">
+      <a href="{{ '/posts' | relative_url }}" class="btn btn-secondary">
+        查看更多文章
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>
