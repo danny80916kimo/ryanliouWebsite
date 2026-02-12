@@ -416,6 +416,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-fill-color: transparent;
+    color: $color-cta; // Fallback for browsers that don't support background-clip
   }
 }
 
@@ -443,57 +445,7 @@
   @media (min-width: $breakpoint-md) {
     padding: $space-2xl $space-xl;
   }
-}
 
-.article-header {
-  margin-bottom: $space-2xl;
-  text-align: center;
-  padding-bottom: $space-xl;
-  border-bottom: 1px solid $color-border;
-}
-
-.article-title {
-  font-family: $font-heading;
-  font-size: $font-size-2xl;
-  font-weight: 700;
-  line-height: $line-height-tight;
-  color: $color-text;
-  margin-bottom: $space-lg;
-
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-3xl;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    font-size: 3.5rem;
-  }
-}
-
-.article-meta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $space-lg;
-  font-size: $font-size-sm;
-  color: $color-text-muted;
-  flex-wrap: wrap;
-
-  time, .reading-time, .author {
-    display: flex;
-    align-items: center;
-    gap: $space-xs;
-  }
-
-  .separator {
-    width: 4px;
-    height: 4px;
-    background: $color-text-muted;
-    border-radius: $radius-full;
-  }
-}
-
-// Article content typography enhancements
-.article-content {
   // Paragraphs
   p {
     margin-bottom: $space-lg;
@@ -591,7 +543,8 @@
   table {
     width: 100%;
     margin: $space-xl 0;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     border: 1px solid $color-border;
     border-radius: $radius-md;
     overflow: hidden;
@@ -625,3 +578,51 @@
     border-top: 2px solid $color-border;
   }
 }
+
+.article-header {
+  margin-bottom: $space-2xl;
+  text-align: center;
+  padding-bottom: $space-xl;
+  border-bottom: 1px solid $color-border;
+}
+
+.article-title {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  color: $color-text;
+  margin-bottom: $space-lg;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3.5rem;
+  }
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-lg;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  flex-wrap: wrap;
+
+  time, .reading-time, .author {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+  }
+
+  .separator {
+    width: 4px;
+    height: 4px;
+    background: $color-text-muted;
+    border-radius: $radius-full;
+  }
+}
+
