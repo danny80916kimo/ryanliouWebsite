@@ -1,0 +1,12 @@
+# Git worktrees directory
+worktrees/
+
+# macOS
+.DS_Store
+
+# Jekyll
+.jekyll-cache/
+_site/
+
+# Design system artifacts
+design-system/
