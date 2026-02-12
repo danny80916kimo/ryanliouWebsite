@@ -80,6 +80,26 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+// Section utilities
+.section {
+  padding: $space-3xl 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-2xl 0;
+  }
+}
+
+.section-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $space-3xl;
+
+  @media (max-width: $breakpoint-md) {
+    margin-top: $space-2xl;
+  }
+}
+
 // Flexbox Utilities
 .flex {
   display: flex;
