@@ -1,0 +1,22 @@
+---
+# Page Layout
+# Simple static page template with title and content
+# Extends: default.html
+# Uses: Static pages like About, Contact, etc.
+#
+# Frontmatter fields:
+# - title: Required page title
+layout: default
+---
+
+<article class="container container-narrow fade-in" id="main" role="main">
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+  </header>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    {{ content }}
+  </div>
+</article>

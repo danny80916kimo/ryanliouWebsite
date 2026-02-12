@@ -1,7 +1,7 @@
 ---
+layout: page
+title: 關於我
 permalink: /about/
-classes: 
-    - wide
 ---
 
 <!-- ![image info](/ryanliouWebsite/assets/images/selfie.jpg) -->
