@@ -639,3 +639,39 @@
   }
 }
 
+.article-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-top: $space-lg;
+}
+
+.article-header-image {
+  width: 100%;
+  max-width: 100%;
+  margin: $space-2xl 0;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.article-footer {
+  margin-top: $space-3xl;
+  padding-top: $space-2xl;
+  border-top: 2px solid $color-border;
+  text-align: center;
+
+  @media (max-width: $breakpoint-md) {
+    margin-top: $space-2xl;
+    padding-top: $space-xl;
+  }
+}
+

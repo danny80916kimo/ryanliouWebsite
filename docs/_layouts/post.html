@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article class="container container-narrow fade-in">
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%Y年%m月%d日" }}
+      </time>
+      {% if page.categories %}
+        <span class="separator"></span>
+        <span class="card-category">{{ page.categories | first }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="article-tags">
+      {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Header Image -->
+  {% if page.header_image %}
+  <div class="article-header-image">
+    <img src="{{ page.header_image | relative_url }}" alt="{{ page.title }}">
+  </div>
+  {% elsif page.header.image %}
+  <div class="article-header-image">
+    <img src="{{ page.header.image | relative_url }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <!-- Article Content -->
+  <div class="article-content">
+    {{ content }}
+  </div>
+
+  <!-- Article Footer -->
+  <footer class="article-footer">
+    <a href="{{ site.baseurl }}/" class="btn btn-secondary">
+      回到首頁
+    </a>
+  </footer>
+</article>

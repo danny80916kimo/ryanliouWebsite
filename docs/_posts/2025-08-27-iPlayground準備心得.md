@@ -1,8 +1,9 @@
 ---
-layout: posts
+layout: post
 title: "iPlayground2025準備心得"
 date: 2025-08-27
 categories: posts
+tags: [iPlayground, iOS, 開發, 心得]
 ---
 
 
