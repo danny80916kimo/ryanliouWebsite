@@ -7,7 +7,7 @@
 
 .site-content {
   flex: 1;
-  padding-top: 80px; // Account for sticky header
+  padding-top: $header-height; // Account for sticky header
 }
 
 // Container System
