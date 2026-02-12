@@ -8,7 +8,7 @@
   <div class="card-content">
     <div class="card-meta">
       <time datetime="{{ post.date | date_to_xmlschema }}">
-        {{ post.date | date: "%Y-%m-%d" }}
+        {{ post.date | date: "%Y年%m月%d日" }}
       </time>
       {% if post.categories %}
         <span class="card-category">{{ post.categories | first }}</span>
