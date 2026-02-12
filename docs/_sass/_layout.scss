@@ -1,3 +1,15 @@
+// Site Wrapper - Full viewport height layout
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+  padding-top: 80px; // Account for sticky header
+}
+
 // Container System
 .container {
   width: 100%;
