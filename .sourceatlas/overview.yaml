@@ -1,0 +1,188 @@
+metadata:
+  project_name: ryanliouWebsite
+  scan_time: 2026-02-12
+  total_files: 168
+  scanned_files: 6
+  scan_ratio: 3.6%
+  project_scale: LARGE
+  context:
+    git_branch: main
+    scan_target: .
+
+project_fingerprint:
+  project_type: Personal Website / Blog
+  scale: LARGE
+  primary_language: Ruby
+  framework: Jekyll
+  architecture: Static Site Generator
+  description: Personal bilingual (Chinese/English) blog and portfolio site for an iOS developer, featuring technical articles, artwork showcase, and professional profile
+
+tech_stack:
+  backend:
+    - technology: Jekyll
+      version: "4.3.3"
+      purpose: Static site generation
+      evidence: docs/Gemfile.lock:27
+    - technology: Ruby
+      version: unknown
+      purpose: Build system and dependencies
+      evidence: docs/Gemfile:1
+  frontend:
+    - technology: Minimal Mistakes Theme
+      version: remote_theme
+      purpose: Jekyll theme providing responsive design
+      evidence: docs/_config.yml:35
+    - technology: Liquid Templates
+      version: "~4.0"
+      purpose: Templating engine
+      evidence: docs/_includes/, docs/_layouts/
+  infrastructure:
+    - technology: GitHub Pages
+      version: unknown
+      purpose: Static site hosting
+      evidence: docs/_config.yml:27
+
+hypotheses:
+  architecture:
+    - hypothesis: "Project follows Jekyll's standard directory structure with posts, pages, layouts, includes, and collections"
+      confidence: 0.95
+      evidence:
+        - "docs/_posts/ contains blog posts"
+        - "docs/_pages/ contains static pages"
+        - "docs/_layouts/ contains 18 layout templates"
+        - "docs/_includes/ contains 42 reusable components"
+      validation_method: "Check for standard Jekyll directories and _config.yml"
+
+    - hypothesis: "Site uses Jekyll collections for custom content types (art_works)"
+      confidence: 0.90
+      evidence:
+        - "docs/_config.yml:85-87 defines art_works collection"
+        - "docs/_art_works/ directory contains artwork entries"
+      validation_method: "Verify collection configuration and directory existence"
+
+    - hypothesis: "Site is bilingual (Chinese and English) with primary content in Traditional Chinese"
+      confidence: 0.95
+      evidence:
+        - "docs/_config.yml:21 - title: '軍事重地'"
+        - "docs/_posts/2025-08-27-iPlayground 歷屆感受.md - Chinese content"
+        - "docs/_pages/about.md - English content"
+      validation_method: "Check language in posts and config"
+
+  tech_stack:
+    - hypothesis: "Uses Minimal Mistakes theme with dark skin"
+      confidence: 0.95
+      evidence:
+        - "docs/_config.yml:35 - remote_theme: mmistakes/minimal-mistakes"
+        - "docs/_config.yml:36 - minimal_mistakes_skin: dark"
+      validation_method: "Check theme configuration in _config.yml"
+
+    - hypothesis: "Site includes search functionality and RSS feed"
+      confidence: 0.90
+      evidence:
+        - "docs/_config.yml:37 - search: true"
+        - "docs/_config.yml:41 - jekyll-feed plugin"
+      validation_method: "Check plugin configuration"
+
+    - hypothesis: "Uses custom SCSS for styling"
+      confidence: 0.85
+      evidence:
+        - "docs/assets/css/main.scss exists"
+        - "docs/_sass/ directory contains Sass partials"
+      validation_method: "Check for SCSS files in assets"
+
+  development:
+    - hypothesis: "Development workflow uses bundle exec jekyll serve for local testing"
+      confidence: 0.95
+      evidence:
+        - "README.md:8 - bundle exec jekyll serve command"
+      validation_method: "Check README for local development instructions"
+
+    - hypothesis: "Project has minimal documentation and no formal contribution guidelines"
+      confidence: 0.85
+      evidence:
+        - "README.md is only 9 lines with basic command"
+        - "No CONTRIBUTING.md or DEVELOPMENT.md found"
+      validation_method: "Check for documentation files"
+
+    - hypothesis: "Site hosted on GitHub Pages with subpath deployment"
+      confidence: 0.90
+      evidence:
+        - "docs/_config.yml:26 - baseurl: /ryanliouWebsite"
+        - "docs/_config.yml:27 - url: https://danny80916kimo.github.io"
+      validation_method: "Check URL configuration in _config.yml"
+
+  ai_collaboration:
+    - hypothesis: "Limited AI collaboration tooling (Level 1)"
+      confidence: 0.90
+      evidence:
+        - ".claude/ directory exists but only contains logs/"
+        - "No CLAUDE.md, .cursorrules, or other AI tool configs"
+      validation_method: "Check for AI collaboration tool config files"
+      level: 1
+      tools_detected:
+        - tool: "Claude Code"
+          tier: 2
+          evidence: ".claude/logs/ directory"
+          config_file: ".claude/"
+
+  business:
+    - hypothesis: "Personal portfolio site for iOS developer with focus on iPlayground conference participation"
+      confidence: 0.95
+      evidence:
+        - "docs/_pages/about.md:10-11 - iOS Developer at Wondercise"
+        - "docs/_posts/ contain iPlayground conference reflections"
+        - "Site showcases technical articles and artwork"
+      validation_method: "Review about page and post topics"
+
+    - hypothesis: "Author is active in Taiwan iOS developer community"
+      confidence: 0.90
+      evidence:
+        - "Multiple posts about iPlayground conference (Taiwan iOS conference)"
+        - "docs/_config.yml:58 - location: Taiwan"
+        - "Chinese language content focused on iOS development"
+      validation_method: "Check post topics and author bio"
+
+    - hypothesis: "Site serves multiple purposes: technical blog, portfolio, and artwork showcase"
+      confidence: 0.95
+      evidence:
+        - "docs/_posts/ for blog articles"
+        - "docs/_art_works/ for artwork collection"
+        - "docs/_pages/about.md for professional profile"
+      validation_method: "Check content organization and collections"
+
+scanned_files:
+  - file: "README.md"
+    reason: "High-entropy: Project overview and setup instructions"
+    key_insight: "Simple Jekyll site with bundle exec jekyll serve command"
+
+  - file: "docs/_config.yml"
+    reason: "High-entropy: Core configuration file"
+    key_insight: "Bilingual personal site using Minimal Mistakes theme, hosted on GitHub Pages with dark skin"
+
+  - file: "docs/Gemfile"
+    reason: "High-entropy: Dependency configuration"
+    key_insight: "Jekyll-based site with minimal-mistakes-jekyll theme and jekyll-feed plugin"
+
+  - file: "docs/_posts/2025-08-27-iPlayground 歷屆感受.md"
+    reason: "Representative content: Blog post example"
+    key_insight: "Personal reflections on iPlayground iOS conference participation, written in Traditional Chinese"
+
+  - file: "docs/index.markdown"
+    reason: "Entry point: Home page"
+    key_insight: "Minimal home layout using wide class and author_profile disabled"
+
+  - file: "docs/_pages/about.md"
+    reason: "High-entropy: About page with author profile"
+    key_insight: "iOS developer working on fitness platform, focuses on WebSocket, Bluetooth, streaming, remote work with Scrum"
+
+summary:
+  understanding_depth: 0.75
+  key_findings:
+    - "Jekyll-based personal website for iOS developer Ryan Liou (大軍軍)"
+    - "Bilingual content (Chinese/English) focused on iOS development and iPlayground conference"
+    - "Uses Minimal Mistakes remote theme with dark skin"
+    - "Deployed to GitHub Pages with subpath /ryanliouWebsite"
+    - "Multiple content types: blog posts, static pages, and art_works collection"
+    - "Site showcases technical expertise, conference participation, and artwork portfolio"
+    - "Author is active in Taiwan iOS developer community"
+    - "Minimal AI collaboration tooling detected (Level 1)"
