@@ -11,7 +11,7 @@ layout: default
 
 <section class="section" aria-label="最新文章">
   <div class="container">
-    <div class="grid cols-3 stagger-fade-in">
+    <div class="grid cols-2 stagger-fade-in">
       {% for post in site.posts limit:9 %}
         {% include post-card.html %}
       {% endfor %}

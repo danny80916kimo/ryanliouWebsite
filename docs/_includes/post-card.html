@@ -7,16 +7,6 @@
   <div class="card-image">
     <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
   </div>
-  {% else %}
-  {% assign title_size = post.title | size %}
-  {% assign day = post.date | date: "%j" | plus: 0 %}
-  {% assign seed = title_size | times: 7 | plus: day %}
-  {% assign angle = seed | modulo: 360 %}
-  {% assign x = seed | times: 13 | modulo: 100 %}
-  {% assign y = seed | times: 37 | modulo: 100 %}
-  <div class="card-image-placeholder"
-       style="--angle: {{ angle }}deg; --x: {{ x }}%; --y: {{ y }}%;">
-  </div>
   {% endif %}
 
   <div class="card-content">

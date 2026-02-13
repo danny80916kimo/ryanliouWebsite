@@ -45,21 +45,14 @@
   display: grid;
   gap: $space-md;
 
-  // Only cols-3 is used in the site
-  &.cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+  &.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  // Responsive grid
+  // Responsive: 1 column on mobile
   @media (max-width: $breakpoint-md - 1) {
-    &.cols-3 {
+    &.cols-2 {
       grid-template-columns: 1fr;
-    }
-  }
-
-  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg - 1) {
-    &.cols-3 {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

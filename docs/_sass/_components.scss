@@ -132,21 +132,6 @@
   }
 }
 
-.card-image-placeholder {
-  width: 100%;
-  height: 200px;
-  border-radius: $radius-md;
-  margin-bottom: $space-md;
-  background:
-    linear-gradient(var(--angle, 135deg), rgba($color-cta, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at var(--x, 30%) var(--y, 40%), rgba($color-cta, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at calc(100% - var(--x, 30%)) calc(100% - var(--y, 40%)), rgba($color-cta, 0.1) 0%, transparent 40%),
-    linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
-
-  @media (min-width: $breakpoint-md) {
-    height: 250px;
-  }
-}
 
 .card-title {
   font-family: $font-heading;
