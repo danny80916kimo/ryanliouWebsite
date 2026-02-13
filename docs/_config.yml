@@ -28,12 +28,13 @@ url: "https://danny80916kimo.github.io" # the base hostname & protocol for your 
 twitter:
   username: dagingingin
 github_username:  danny80916kimo
+instagram_username: danny80916kimo
 # masthead_title: "My Custom Title"
 logo: assets/images/logo.jpg
 # Build settings
 # theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
+# remote_theme: "mmistakes/minimal-mistakes"
+# minimal_mistakes_skin: "dark"
 search: true
 atom_feed:
   hide: true
@@ -73,14 +74,12 @@ defaults:
       path: ""
       type: posts
     values:
-      author_profile: true
-      show_date: true
+      layout: post
   - scope:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: page
 
 collections:
    art_works:

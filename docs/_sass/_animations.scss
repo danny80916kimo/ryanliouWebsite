@@ -1,0 +1,61 @@
+// Animation Styles
+
+// Fade-in animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn $animation-slow ease-out;
+}
+
+// Staggered fade-in for lists
+.stagger-fade-in > * {
+  opacity: 0;
+  animation: fadeIn $animation-base ease-out forwards;
+}
+
+@for $i from 1 through 12 {
+  .stagger-fade-in > *:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.1}s;
+  }
+}
+
+// Pulse animation
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .stagger-fade-in > *,
+  .pulse {
+    animation: none;
+    opacity: 1;
+  }
+}

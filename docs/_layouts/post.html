@@ -1,0 +1,61 @@
+---
+# Post Layout
+# Individual blog post template with header, meta, tags, content, and footer
+# Extends: default.html
+# Uses: All blog posts in _posts/
+#
+# Frontmatter fields:
+# - header_image or header.image: Optional header image URL
+# - header_image_alt: Optional alt text for header image (defaults to post title)
+# - tags: Optional array of tags
+# - categories: Optional array of categories
+layout: default
+---
+
+<article class="container container-narrow fade-in" id="main" role="main">
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%Y年%m月%d日" }}
+      </time>
+      {% if page.categories %}
+        <span class="separator"></span>
+        <span class="card-category">{{ page.categories | first }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="article-tags">
+      {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Header Image (supports both header_image and header.image for backward compatibility) -->
+  {% if page.header_image %}
+  <div class="article-header-image">
+    <img src="{{ page.header_image | relative_url }}" alt="{{ page.header_image_alt | default: page.title }}" loading="lazy">
+  </div>
+  {% elsif page.header.image %}
+  <div class="article-header-image">
+    <img src="{{ page.header.image | relative_url }}" alt="{{ page.header_image_alt | default: page.title }}" loading="lazy">
+  </div>
+  {% endif %}
+
+  <!-- Article Content -->
+  <div class="article-content">
+    {{ content }}
+  </div>
+
+  <!-- Article Footer -->
+  <footer class="article-footer">
+    <a href="{{ site.baseurl }}/" class="btn btn-secondary">
+      回到首頁
+    </a>
+  </footer>
+</article>
