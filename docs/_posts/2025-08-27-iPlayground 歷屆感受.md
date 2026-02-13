@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: "iPlayground 歷屆感受"
 date: 2025-08-27
 categories: posts

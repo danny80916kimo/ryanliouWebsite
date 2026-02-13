@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: "iPlayground 2025"
 date: 2025-09-25
 categories: posts
