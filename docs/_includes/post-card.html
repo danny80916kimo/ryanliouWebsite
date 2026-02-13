@@ -3,6 +3,10 @@
   <div class="card-image">
     <img src="{{ post.header_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
   </div>
+  {% elsif post.header.image %}
+  <div class="card-image">
+    <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+  </div>
   {% else %}
   <div class="card-image-placeholder"></div>
   {% endif %}
