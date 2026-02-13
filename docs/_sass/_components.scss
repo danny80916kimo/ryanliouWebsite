@@ -6,7 +6,7 @@
 
 .btn {
   display: inline-block;
-  padding: $space-sm $space-lg;
+  padding: $space-md $space-lg;
   font-family: $font-heading;
   font-size: $font-size-base;
   font-weight: 600;
@@ -17,6 +17,10 @@
   cursor: pointer;
   transition: all $transition-base;
   line-height: $line-height-tight;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     text-decoration: none;
@@ -281,6 +285,15 @@
   text-decoration: none;
   transition: color $transition-base;
   position: relative;
+  padding: $space-sm $space-xs;
+  display: inline-block;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $space-xs;
+  }
 
   &::after {
     content: '';
@@ -367,8 +380,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   color: $color-text-muted;
   background: $color-secondary;
   border: 1px solid $color-border;
