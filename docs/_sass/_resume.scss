@@ -2,6 +2,11 @@
 // RESUME / ABOUT PAGE
 // =============================================================================
 
+// Zero out site-content padding on resume page
+.layout-resume .site-content {
+  padding-top: 0;
+}
+
 // Main container - two column grid
 .resume {
   display: grid;
@@ -13,7 +18,7 @@
 
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: 300px 1fr;
-    padding: $space-3xl $space-xl;
+    padding: 0 $space-xl;
     gap: $space-3xl;
   }
 }
@@ -26,7 +31,8 @@
   @media (min-width: $breakpoint-lg) {
     height: fit-content;
     position: sticky;
-    top: calc(#{$header-height} + #{$space-xl});
+    top: 0;
+    padding-top: calc(#{$header-height} + #{$space-xl});
   }
 }
 
@@ -40,6 +46,15 @@
   display: flex;
   flex-direction: column;
   gap: $space-sm;
+}
+
+.resume-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid $color-cta;
+  margin-bottom: $space-sm;
 }
 
 .resume-name {
@@ -155,6 +170,10 @@
   display: flex;
   flex-direction: column;
   gap: $space-3xl;
+
+  @media (min-width: $breakpoint-lg) {
+    padding-top: calc(#{$header-height} + #{$space-xl});
+  }
 }
 
 // Section titles

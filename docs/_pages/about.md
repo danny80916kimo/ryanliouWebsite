@@ -5,6 +5,7 @@ permalink: /about/
 name: Ryan Liou
 role: Senior iOS Engineer
 tagline: "Building reliable, user-centric mobile experiences with Swift, SwiftUI, and a passion for clean architecture."
+avatar: /assets/images/selfie.jpg
 ---
 
 <section id="about" class="resume-section" aria-label="About">
