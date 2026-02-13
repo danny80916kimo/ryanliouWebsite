@@ -32,9 +32,8 @@ instagram_username: danny80916kimo
 # masthead_title: "My Custom Title"
 logo: assets/images/logo.jpg
 # Build settings
-# theme: minimal-mistakes-jekyll
-# remote_theme: "mmistakes/minimal-mistakes"
-# minimal_mistakes_skin: "dark"
+# No theme - using custom design
+theme: null
 search: true
 atom_feed:
   hide: true
