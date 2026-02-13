@@ -1,0 +1,406 @@
+// =============================================================================
+// RESUME / ABOUT PAGE
+// =============================================================================
+
+// Main container - two column grid
+.resume {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-lg;
+  gap: $space-2xl;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 300px 1fr;
+    padding: $space-3xl $space-xl;
+    gap: $space-3xl;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// SIDEBAR
+// -----------------------------------------------------------------------------
+
+.resume-sidebar {
+  @media (min-width: $breakpoint-lg) {
+    height: fit-content;
+    position: sticky;
+    top: calc(#{$header-height} + #{$space-xl});
+  }
+}
+
+.resume-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+}
+
+.resume-identity {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.resume-name {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $color-text;
+  margin-bottom: 0;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.resume-title {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  font-weight: 500;
+  color: $color-cta;
+  margin-bottom: 0;
+}
+
+.resume-tagline {
+  font-size: $font-size-base;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+  margin-bottom: 0;
+}
+
+// Sidebar navigation
+.resume-nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+}
+
+.resume-nav-link {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-sm 0;
+  font-family: $font-heading;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-text-muted;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color $transition-base;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: $color-text-muted;
+    transition: all $transition-base;
+  }
+
+  &:hover,
+  &.active {
+    color: $color-text;
+    text-decoration: none;
+
+    &::before {
+      width: 60px;
+      background: $color-text;
+    }
+  }
+
+  &.active {
+    color: $color-cta;
+
+    &::before {
+      background: $color-cta;
+    }
+  }
+}
+
+// Social links
+.resume-social {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-muted;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-cta;
+      text-decoration: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MAIN CONTENT
+// -----------------------------------------------------------------------------
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3xl;
+}
+
+// Section titles
+.resume-section-title {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: $color-text;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: $space-lg;
+
+  // Only visible on mobile (desktop uses sidebar nav)
+  @media (min-width: $breakpoint-lg) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+// About section
+.resume-about {
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-muted;
+    margin-bottom: $space-lg;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  strong {
+    color: $color-text;
+  }
+}
+
+// Speaking list
+.resume-speaking {
+  margin-top: $space-xl;
+
+  h3 {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $color-text;
+    margin-bottom: $space-md;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  li {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    padding-left: $space-lg;
+    position: relative;
+    margin-bottom: 0;
+
+    &::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: $color-cta;
+      font-family: $font-code;
+    }
+  }
+
+  a {
+    color: $color-cta;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// EXPERIENCE ENTRIES
+// -----------------------------------------------------------------------------
+
+.resume-entries {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.resume-entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+  padding: $space-lg;
+  border-radius: $radius-lg;
+  transition: background $transition-base;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 140px 1fr;
+    gap: $space-xl;
+  }
+
+  &:hover {
+    background: rgba($color-cta, 0.05);
+  }
+}
+
+.resume-entry-date {
+  font-family: $font-heading;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text-muted;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+.resume-entry-content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.resume-entry-title {
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  font-weight: 600;
+  color: $color-text;
+  margin-bottom: 0;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.resume-entry-company {
+  color: $color-cta;
+}
+
+.resume-entry-desc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin-bottom: 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: $space-sm 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  li {
+    padding-left: $space-lg;
+    position: relative;
+    margin-bottom: 0;
+
+    &::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: $color-cta;
+      font-family: $font-code;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.resume-entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-top: $space-sm;
+}
+
+.resume-tag {
+  display: inline-block;
+  padding: $space-xs $space-sm;
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-cta;
+  background: rgba($color-cta, 0.1);
+  border-radius: $radius-full;
+}
+
+// -----------------------------------------------------------------------------
+// PROJECT ENTRIES
+// -----------------------------------------------------------------------------
+
+.resume-project {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  padding: $space-lg;
+  border-radius: $radius-lg;
+  transition: background $transition-base;
+
+  &:hover {
+    background: rgba($color-cta, 0.05);
+  }
+}
+
+.resume-project-title {
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  font-weight: 600;
+  color: $color-text;
+  margin-bottom: 0;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.resume-project-desc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin-bottom: 0;
+}
+
+// -----------------------------------------------------------------------------
+// EDUCATION & CERTIFICATES (compact)
+// -----------------------------------------------------------------------------
+
+.resume-compact {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  padding: 0 $space-lg;
+
+  p {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    margin-bottom: 0;
+
+    strong {
+      color: $color-text;
+    }
+  }
+}
