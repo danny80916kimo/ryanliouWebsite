@@ -24,8 +24,11 @@
 
   &:hover {
     text-decoration: none;
-    transform: translateY(-2px);
     box-shadow: $shadow-md;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transform: translateY(-2px);
+    }
   }
 
   &:active {
@@ -92,9 +95,12 @@
   color: inherit;
 
   &:hover {
-    transform: translateY(-4px);
     box-shadow: $shadow-lg;
     border-color: $color-cta;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transform: translateY(-4px);
+    }
 
     .card-title {
       color: $color-cta;
@@ -393,8 +399,11 @@
     color: $color-cta;
     background: $color-primary;
     border-color: $color-cta;
-    transform: translateY(-2px);
     text-decoration: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transform: translateY(-2px);
+    }
   }
 
   &:focus-visible {
