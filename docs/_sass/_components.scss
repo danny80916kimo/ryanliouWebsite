@@ -36,7 +36,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 2px;
   }
 
@@ -48,25 +48,26 @@
 }
 
 .btn-primary {
-  background: $color-cta;
-  color: $color-background;
-  border-color: $color-cta;
+  background: var(--color-cta);
+  color: var(--color-bg-primary);
+  border-color: var(--color-cta);
 
   &:hover {
-    background: darken($color-cta, 10%);
-    border-color: darken($color-cta, 10%);
+    background: var(--color-cta);
+    border-color: var(--color-cta);
+    opacity: 0.9;
   }
 }
 
 .btn-secondary {
   background: transparent;
-  color: $color-text;
-  border-color: $color-border;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
 
   &:hover {
-    background: $color-primary;
-    border-color: $color-cta;
-    color: $color-cta;
+    background: var(--color-bg-secondary);
+    border-color: var(--color-cta);
+    color: var(--color-cta);
   }
 }
 
@@ -75,8 +76,8 @@
 // =============================================================================
 
 .card {
-  background: $color-primary;
-  border: 1px solid $color-border;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
   border-radius: $radius-lg;
   padding: $space-lg;
   transition: all $transition-base;
@@ -85,7 +86,8 @@
   flex-direction: column;
 
   &:hover {
-    border-color: lighten($color-border, 10%);
+    border-color: var(--color-border);
+    opacity: 0.95;
   }
 }
 
@@ -96,19 +98,19 @@
 
   &:hover {
     box-shadow: $shadow-lg;
-    border-color: $color-cta;
+    border-color: var(--color-cta);
 
     @media (prefers-reduced-motion: no-preference) {
       transform: translateY(-4px);
     }
 
     .card-title {
-      color: $color-cta;
+      color: var(--color-cta);
     }
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 2px;
   }
 }
@@ -133,7 +135,7 @@
   font-size: $font-size-lg;
   font-weight: 600;
   line-height: $line-height-tight;
-  color: $color-text;
+  color: var(--color-text-primary);
   transition: color $transition-base;
 
   @media (min-width: $breakpoint-md) {
@@ -144,7 +146,7 @@
 .card-meta {
   margin-bottom: 0.75rem;
   font-size: $font-size-sm;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
 
   time {
     font-weight: 500;
@@ -155,7 +157,7 @@
   margin-bottom: $space-md;
   font-size: 0.9375rem;
   line-height: $line-height-relaxed;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   flex-grow: 1;
 
   p:last-child {
@@ -175,15 +177,15 @@
   padding: $space-xs $space-sm;
   font-size: $font-size-sm;
   font-weight: 500;
-  color: $color-cta;
-  background: rgba($color-cta, 0.1);
-  border: 1px solid rgba($color-cta, 0.2);
+  color: var(--color-cta);
+  background: color-mix(in srgb, var(--color-cta) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-cta) 20%, transparent);
   border-radius: $radius-full;
   transition: all $transition-fast;
 
   &:hover {
-    background: rgba($color-cta, 0.2);
-    border-color: $color-cta;
+    background: color-mix(in srgb, var(--color-cta) 20%, transparent);
+    border-color: var(--color-cta);
     text-decoration: none;
   }
 }
@@ -196,13 +198,13 @@
   position: sticky;
   top: 0;
   z-index: $z-sticky;
-  background: rgba($color-background, 0.95);
+  background: color-mix(in srgb, var(--color-bg-primary) 95%, transparent);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid var(--color-border);
   padding: $space-md 0;
 
   @supports not (backdrop-filter: blur(10px)) {
-    background: $color-background;
+    background: var(--color-bg-primary);
   }
 }
 
@@ -223,19 +225,19 @@
   font-family: $font-heading;
   font-size: $font-size-xl;
   font-weight: 700;
-  color: $color-text;
+  color: var(--color-text-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: $space-sm;
 
   &:hover {
-    color: $color-cta;
+    color: var(--color-cta);
     text-decoration: none;
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 4px;
     border-radius: $radius-sm;
   }
@@ -258,7 +260,7 @@
   font-family: $font-heading;
   font-size: $font-size-base;
   font-weight: 500;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color $transition-base;
   position: relative;
@@ -279,12 +281,12 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: $color-cta;
+    background: var(--color-cta);
     transition: width $transition-base;
   }
 
   &:hover {
-    color: $color-text;
+    color: var(--color-text-primary);
     text-decoration: none;
 
     &::after {
@@ -293,7 +295,7 @@
   }
 
   &.active {
-    color: $color-cta;
+    color: var(--color-cta);
 
     &::after {
       width: 100%;
@@ -301,7 +303,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 4px;
     border-radius: $radius-sm;
   }
@@ -312,8 +314,8 @@
 // =============================================================================
 
 .site-footer {
-  background: $color-primary;
-  border-top: 1px solid $color-border;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
   padding: $space-2xl 0;
   margin-top: $space-3xl;
 }
@@ -336,7 +338,7 @@
 
 .footer-text {
   font-size: $font-size-sm;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   text-align: center;
 
   @media (min-width: $breakpoint-md) {
@@ -359,17 +361,17 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  color: $color-text-muted;
-  background: $color-secondary;
-  border: 1px solid $color-border;
+  color: var(--color-text-muted);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
   border-radius: $radius-md;
   text-decoration: none;
   transition: all $transition-base;
 
   &:hover {
-    color: $color-cta;
-    background: $color-primary;
-    border-color: $color-cta;
+    color: var(--color-cta);
+    background: var(--color-bg-secondary);
+    border-color: var(--color-cta);
     text-decoration: none;
 
     @media (prefers-reduced-motion: no-preference) {
@@ -378,7 +380,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 2px;
   }
 
@@ -399,8 +401,8 @@
   margin-top: -$header-height;
   padding-top: calc(#{$header-height} + #{$space-3xl});
   text-align: center;
-  background: $color-background;
-  border-bottom: 1px solid $color-border;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
   overflow: hidden;
 
   @media (min-width: $breakpoint-md) {
@@ -421,7 +423,7 @@
 .hero-grid-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba($color-text, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(color-mix(in srgb, var(--color-text-primary) 8%, transparent) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: 0;
 }
@@ -437,7 +439,7 @@
 .hero-glow-1 {
   width: 600px;
   height: 600px;
-  background: rgba($color-cta, 0.12);
+  background: color-mix(in srgb, var(--color-cta) 12%, transparent);
   top: 10%;
   left: 5%;
   animation: glowDrift1 8s ease-in-out infinite;
@@ -467,7 +469,7 @@
 .hero-glow-3 {
   width: 400px;
   height: 400px;
-  background: rgba($color-cta, 0.08);
+  background: color-mix(in srgb, var(--color-cta) 8%, transparent);
   bottom: 5%;
   left: 40%;
   animation: glowDrift3 12s ease-in-out infinite;
@@ -497,7 +499,7 @@
 .hero-glow-5 {
   width: 250px;
   height: 250px;
-  background: rgba($color-cta, 0.1);
+  background: color-mix(in srgb, var(--color-cta) 10%, transparent);
   top: 50%;
   left: 25%;
   animation: glowDrift2 9s ease-in-out infinite reverse;
@@ -513,7 +515,7 @@
   font-size: $font-size-3xl;
   font-weight: 700;
   line-height: $line-height-tight;
-  color: $color-text;
+  color: var(--color-text-primary);
   margin-bottom: $space-lg;
 
   @media (min-width: $breakpoint-md) {
@@ -525,20 +527,20 @@
   }
 
   span {
-    background: linear-gradient(135deg, $color-cta 0%, lighten($color-cta, 20%) 100%);
+    background: linear-gradient(135deg, var(--color-cta) 0%, color-mix(in srgb, var(--color-cta) 80%, white) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    color: $color-cta; // Fallback for browsers that don't support background-clip
-    text-shadow: 0 0 40px rgba($color-cta, 0.3);
+    color: var(--color-cta); // Fallback for browsers that don't support background-clip
+    text-shadow: 0 0 40px color-mix(in srgb, var(--color-cta) 30%, transparent);
   }
 }
 
 .hero-subtitle {
   font-size: $font-size-lg;
   line-height: $line-height-relaxed;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   max-width: 600px;
   margin: 0 auto $space-xl;
 
@@ -568,7 +570,7 @@
 
     &:first-of-type {
       font-size: $font-size-xl;
-      color: lighten($color-text-muted, 10%);
+      color: var(--color-text-secondary);
     }
   }
 
@@ -581,15 +583,15 @@
 
   // Links within content
   a {
-    color: $color-cta;
+    color: var(--color-cta);
     text-decoration: underline;
-    text-decoration-color: rgba($color-cta, 0.3);
+    text-decoration-color: color-mix(in srgb, var(--color-cta) 30%, transparent);
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
     transition: all $transition-base;
 
     &:hover {
-      text-decoration-color: $color-cta;
+      text-decoration-color: var(--color-cta);
     }
   }
 
@@ -603,7 +605,7 @@
       line-height: $line-height-relaxed;
 
       &::marker {
-        color: $color-cta;
+        color: var(--color-cta);
       }
     }
   }
@@ -613,11 +615,11 @@
     margin: $space-xl 0;
     padding: $space-lg;
     padding-left: $space-xl;
-    border-left: 4px solid $color-cta;
-    background: rgba($color-cta, 0.05);
+    border-left: 4px solid var(--color-cta);
+    background: color-mix(in srgb, var(--color-cta) 5%, transparent);
     border-radius: $radius-md;
     font-style: italic;
-    color: $color-text-muted;
+    color: var(--color-text-muted);
 
     p:last-child {
       margin-bottom: 0;
@@ -628,7 +630,7 @@
       margin-top: $space-md;
       font-size: $font-size-sm;
       font-style: normal;
-      color: $color-text-muted;
+      color: var(--color-text-muted);
 
       &::before {
         content: '— ';
@@ -659,21 +661,21 @@
     margin: $space-xl 0;
     border-collapse: separate;
     border-spacing: 0;
-    border: 1px solid $color-border;
+    border: 1px solid var(--color-border);
     border-radius: $radius-md;
     overflow: hidden;
 
     th, td {
       padding: $space-md;
       text-align: left;
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid var(--color-border);
     }
 
     th {
-      background: $color-primary;
+      background: var(--color-bg-secondary);
       font-family: $font-heading;
       font-weight: 600;
-      color: $color-cta;
+      color: var(--color-cta);
     }
 
     tr:last-child td {
@@ -681,7 +683,7 @@
     }
 
     tr:hover {
-      background: rgba($color-cta, 0.05);
+      background: color-mix(in srgb, var(--color-cta) 5%, transparent);
     }
   }
 
@@ -689,7 +691,7 @@
   hr {
     margin: $space-2xl 0;
     border: none;
-    border-top: 2px solid $color-border;
+    border-top: 2px solid var(--color-border);
   }
 }
 
@@ -697,7 +699,7 @@
   margin-bottom: $space-2xl;
   text-align: center;
   padding-bottom: $space-xl;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .article-title {
@@ -705,7 +707,7 @@
   font-size: $font-size-2xl;
   font-weight: 700;
   line-height: $line-height-tight;
-  color: $color-text;
+  color: var(--color-text-primary);
   margin-bottom: $space-lg;
 
   @media (min-width: $breakpoint-md) {
@@ -723,7 +725,7 @@
   justify-content: center;
   gap: $space-lg;
   font-size: $font-size-sm;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   flex-wrap: wrap;
 
   time, .author {
@@ -735,7 +737,7 @@
   .separator {
     width: 4px;
     height: 4px;
-    background: $color-text-muted;
+    background: var(--color-text-muted);
     border-radius: $radius-full;
   }
 }
@@ -767,7 +769,7 @@
 .article-footer {
   margin-top: $space-3xl;
   padding-top: $space-2xl;
-  border-top: 2px solid $color-border;
+  border-top: 2px solid var(--color-border);
   text-align: center;
 
   @media (max-width: $breakpoint-md) {
