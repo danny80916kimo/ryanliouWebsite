@@ -1,0 +1,33 @@
+// CSS Variables for Light/Dark Themes
+// Light mode is default, dark mode uses [data-theme="dark"]
+
+:root {
+  // Light Mode - Soft pastel color scheme
+  --color-bg-primary: #F5F7FA;
+  --color-bg-secondary: #FFFFFF;
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-cta: #22C55E;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  // Dark Mode - Current tech dark theme
+  --color-bg-primary: #0F172A;
+  --color-bg-secondary: #1E293B;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #E2E8F0;
+  --color-text-muted: #9CA3AF;
+  --color-border: #334155;
+  --color-cta: #22C55E;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+// Smooth transitions for theme switching
+* {
+  transition: background-color 200ms ease,
+              color 200ms ease,
+              border-color 200ms ease;
+}
