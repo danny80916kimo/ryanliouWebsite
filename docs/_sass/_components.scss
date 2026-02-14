@@ -80,6 +80,7 @@
   border-radius: $radius-lg;
   padding: $space-lg;
   transition: all $transition-base;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -129,14 +130,14 @@
 .card-title {
   font-family: $font-heading;
   margin-bottom: $space-md;
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   font-weight: 600;
   line-height: $line-height-tight;
   color: $color-text;
   transition: color $transition-base;
 
   @media (min-width: $breakpoint-md) {
-    font-size: $font-size-2xl;
+    font-size: $font-size-xl;
   }
 }
 
