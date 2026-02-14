@@ -35,6 +35,9 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+  <!-- Theme Switcher - Loaded in head to prevent FOUT -->
+  <script src="{{ site.baseurl }}/assets/js/theme-switcher.js"></script>
 </head>
 <body class="{% if page.layout %}layout-{{ page.layout }}{% endif %}">
   <a href="#main" class="skip-to-main">Skip to main content</a>
@@ -56,6 +59,11 @@
             <a href="{{ site.baseurl }}/about/" class="nav-link {% if page.url contains '/about' %}active{% endif %}">
               關於我
             </a>
+          </li>
+          <li>
+            <button class="theme-toggle" onclick="window.toggleTheme()" aria-label="切換主題">
+              🌓
+            </button>
           </li>
         </ul>
       </nav>
