@@ -11,8 +11,8 @@
   left: -9999px;
   z-index: 999;
   padding: $space-md $space-lg;
-  background: $color-cta;
-  color: $color-background;
+  background: var(--color-cta);
+  color: var(--color-bg-primary);
   text-decoration: none;
   font-weight: 600;
   border-radius: $radius-md;
@@ -20,7 +20,7 @@
   &:focus {
     left: $space-md;
     top: $space-md;
-    outline: 2px solid $color-text;
+    outline: 2px solid var(--color-text-primary);
     outline-offset: 2px;
   }
 }
@@ -38,8 +38,8 @@ body {
   font-family: $font-body;
   font-size: $font-size-base;
   line-height: $line-height-normal;
-  color: $color-text;
-  background-color: $color-background;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: 600;
   line-height: $line-height-tight;
-  color: $color-text;
+  color: var(--color-text-primary);
   margin-bottom: $space-md;
 }
 
@@ -87,7 +87,7 @@ p {
 }
 
 a {
-  color: $color-cta;
+  color: var(--color-cta);
   text-decoration: none;
 
   &:hover {
@@ -95,7 +95,7 @@ a {
   }
 
   &:focus-visible {
-    outline: 2px solid $color-cta;
+    outline: 2px solid var(--color-cta);
     outline-offset: 2px;
     border-radius: $radius-sm;
   }
@@ -105,14 +105,14 @@ a {
 code {
   font-family: $font-code;
   font-size: $font-size-sm;
-  background: $color-primary;
+  background: var(--color-bg-secondary);
   padding: 2px 6px;
   border-radius: $radius-sm;
-  color: $color-cta;
+  color: var(--color-cta);
 }
 
 pre {
-  background: $color-primary;
+  background: var(--color-bg-secondary);
   padding: $space-lg;
   border-radius: $radius-lg;
   overflow-x: auto;
@@ -143,13 +143,13 @@ li {
 
 // Selection
 ::selection {
-  background: $color-cta;
-  color: $color-background;
+  background: var(--color-cta);
+  color: var(--color-bg-primary);
 }
 
 // Focus visible
 :focus-visible {
-  outline: 2px solid $color-cta;
+  outline: 2px solid var(--color-cta);
   outline-offset: 2px;
 }
 
